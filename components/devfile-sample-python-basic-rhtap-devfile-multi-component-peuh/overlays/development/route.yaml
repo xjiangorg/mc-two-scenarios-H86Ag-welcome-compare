@@ -1,0 +1,20 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-python-basic-rhtap-devfile-multi-component-peuh
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-python-basic-rhtap-devfile-multi-component-peuh
+    app.kubernetes.io/part-of: mc-two-scenarios
+  name: devfile-sample-python-bas2dq3
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  to:
+    kind: Service
+    name: devfile-sample-python-basic-rhtap-devfile-multi-component-peuh
+    weight: null
+status: {}
