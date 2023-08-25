@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-java-springboot-basic-rhtap-devfile-multi-c-jpzj
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-java-springboot-basic-rhtap-devfile-multi-c-jpzj
+    app.kubernetes.io/part-of: mc-two-scenarios
+  name: devfile-sample-java-springboot-basic-rhtap-devfile-multi-c-jpzj
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: java-springboot-app
+      app.kubernetes.io/instance: devfile-sample-java-springboot-basic-rhtap-devfile-multi-c-jpzj
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: java-springboot-app
+        app.kubernetes.io/instance: devfile-sample-java-springboot-basic-rhtap-devfile-multi-c-jpzj
+    spec:
+      containers:
+      - image: java-springboot-image:latest
+        name: my-java-springboot
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 300Mi
+          requests:
+            cpu: 10m
+            memory: 180Mi
+status: {}
